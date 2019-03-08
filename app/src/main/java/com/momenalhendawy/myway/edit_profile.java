@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
@@ -23,29 +24,45 @@ public class edit_profile extends AppCompatActivity {
     private EditText Firstname;
     private EditText Secondname;
     private EditText Email;
-    private EditText password;
+    private EditText Password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
+        Firstname = (EditText)findViewById(R.id.EditFirstName);
+        final String fr_n = Firstname.getText().toString();
+
+        Secondname = (EditText)findViewById(R.id.EditSecondName);
+        String se_n = Secondname.getText().toString();
+
+        Email = (EditText)findViewById(R.id.EditEmail);
+        String mail = Email.getText().toString();
+
+        Password = (EditText)findViewById(R.id.EditPassword);
+        String pass = Password.getText().toString();
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref = database.getReference();
-
-        ref.addValueEventListener(new ValueEventListener() {
+        ref.child("Client").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Map<String,String> map =dataSnapshot.getValue(Map.class);
-                String firstname =map.get("firstName");
-                String secondname =map.get("lastName");
-                String email =map.get("email");
-                String password =map.get("password");
+            public void onDataChange( com.google.firebase.database.DataSnapshot dataSnapshot) {
 
-                Log.v("E_VALUE","FirstName");
-                Log.v("E_VALUE","LastName");
-                Log.v("E_VALUE","Email");
-                Log.v("E_VALUE","Password");
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Map<String, String> map = (Map) postSnapshot.getValue();
+                    if (map != null) {
+                        String firstname =map.get("firstName");
+                        Firstname.setText(firstname);
+                        String secondname =map.get("lastName");
+                        Secondname.setText(secondname);
+                        String email =map.get("email");
+                        Email.setText(email);
+                        String password =map.get("password");
+                        Password.setText(password);
+                    }
+                }
+
             }
 
             @Override
@@ -53,11 +70,6 @@ public class edit_profile extends AppCompatActivity {
 
             }
         });
-
-        Firstname =(EditText)findViewById(R.id.EditFirstName);
-        Secondname =(EditText)findViewById(R.id.EditSecondName);
-        Email =(EditText)findViewById(R.id.EditEmail);
-        password =(EditText)findViewById(R.id.EditPassword);
 
         saveprofileedit = findViewById(R.id.saveiditprofile);
         saveprofileedit.setOnClickListener(new View.OnClickListener() {
