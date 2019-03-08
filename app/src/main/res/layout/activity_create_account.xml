@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccount">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/myImage"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/logo"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/createaccount_firstname"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="102dp"
+                android:layout_marginTop="240dp"
+                android:layout_marginEnd="67dp"
+                android:background="@drawable/round_edittxt_login"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/createaccount_firstname"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/createaccount_lastname"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="102dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="69dp"
+                android:background="@drawable/round_edittxt_login"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/createaccount_lastname"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/createaccount_phonenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="102dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="70dp"
+                android:background="@drawable/round_edittxt_login"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/createaccount_phonenumber"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/createaccount_password"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginStart="102dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="70dp"
+                android:background="@drawable/round_edittxt_login"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/createaccount_password"
+                android:inputType="textVisiblePassword" />
+
+            <Button
+                android:id="@+id/createaccount_submit"
+                android:layout_width="222dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="99dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="70dp"
+                android:layout_marginBottom="48dp"
+                android:background="@drawable/round"
+                android:text="@string/createaccount_submit"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

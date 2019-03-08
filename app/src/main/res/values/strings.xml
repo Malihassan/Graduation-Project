@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name" translatable="false">FeTare2k</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">FeTare2k</string>
+    <string name="nav_header_subtitle" translatable="false">eelugroup@gmail.com</string>
+    <string name="nav_header_desc" translatable="false">FeTare2k</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="nav_profile" translatable="false">الصفحة الشخصية </string>
+    <string name="nav_captain" translatable="false">  تفاصيل عن الكابتن</string>
+    <string name="nav_order" translatable="false">طلبات  النتظرة  </string>
+    <string name="nav_neworder" translatable="false">طلب جديد</string>
+    <string name="nav_discount" translatable="false"> خصومات </string>
+    <string name="nav_logout" translatable="false"> تسجيل الخروج </string>
+    <!--
+Order
+-->
+
+    <string name="cancel_order" translatable="false">إلغاء الطلب</string>
+    <string name="recieve_order" translatable="false">استقبال الطلب</string>
+    <string name="captain_details" translatable="false">معلومات عن الكابتن</string>
+    <string name="order_name" translatable="false">إسم الطلب</string>
+    <string name="send_order" translatable="false">إرسال الطلب</string>
+    <string name="order_details" translatable="false">تفاصيل الطلب</string>
+    <string name="Done" translatable="false">تم!</string>
+    <string name="new_order" translatable="false">طلب جديد</string>
+
+    <!--
+    home login
+    -->
+    <string name="home_login" translatable="false"> تسجيل دخول </string>
+    <string name="forget_pass" translatable="false"> هل نسيت كلمة السر ؟</string>
+    <string name="login_create_password" translatable="false">انشاء حساب ؟</string>
+    <string name="login_phone_number" translatable="false">رقم الهاتف </string>
+    <string name="login_password" translatable="false">رقم السرى </string>
+    <!--
+    forget password ?
+    -->
+    <string name="forgetpass_code" translatable="false"> الكود</string>
+    <string name="forgetpass_submit" translatable="false">تسجيل</string>
+    <string name="forgetpass_phoneNumber" translatable="false">رقم الهاتف</string>
+    <!--
+    New password
+    -->
+    <string name="Newpass_newpassword" translatable="false">كلمة السر الجديدة</string>
+    <string name="Newpass_verifynewpass" translatable="false">تأكيد كلمة السر الجديدة</string>
+    <string name="Newpass_submit" translatable="false">تسجيل </string>
+    <string name="newpasswordmessage" translatable="false">سوف نقوم بارسال رسالة على هاتفك الشخصى تحتوى على كود.... </string>
+
+    <!--
+    create account
+    -->
+    <string name="createaccount_firstname" translatable="false">الاسم الاول </string>
+    <string name="createaccount_lastname" translatable="false">الاسم الثانى</string>
+    <string name="createaccount_phonenumber" translatable="false">رقم الهاتف</string>
+    <string name="createaccount_password" translatable="false">كلمة السر </string>
+    <string name="createaccount_submit" translatable="false">تسجيل</string>
+    <!--
+    verify account
+    -->
+    <string name="verifyacount_code" translatable="false">الكود </string>
+    <string name="verifyacount_submot" translatable="false">تسجيل</string>
+    <string name="virifymessage" translatable="false">سوف نقوم بارسال رسالة على هاتفك الشخصى تحتوى على كود.... </string>
+
+    <!--
+    Home
+    -->
+    <string name="waiting_orders" translatable="false">الطلبات المنتظره:</string>
+    <string name="item" translatable="false">الطلب</string>
+    <string name="value" translatable="false">الكميه</string>
+    <string name="order_more" translatable="false">طلب المزيد</string>
+
+
+    <!--
+    Captaindetails
+    -->
+    <string name="rating" translatable="false">التقيم 3/5</string>
+    <string name="phoneacptain" translatable="false">رقم الهاتف:  01005454</string>
+    <string name="captain_details_trackorder" translatable="false">تتبع الطلب </string>
+    <string name="captain_details_comment" translatable="false">تقيمك على الاكابتن  </string>
+    <string name="Cancel_oder" translatable="false">الغاء الطلب  </string>
+    <!--
+    recie_order page
+
+    -->
+    <string name="recieve_order_reting" translatable="false"> تقديرك على الخدمة</string>
+    <string name="recieve_order_comment" translatable="false">كود الخصم </string>
+    <string name="edittextView" translatable="false">تعليق</string>
+    <string name="reciveorder_page" translatable="false">تسجيل  </string>
+
+    <!--
+    profile
+
+    -->
+    <string name="profile_firstname" translatable="false"> مؤمن زكريا على</string>
+    <string name="profile_country_text_view" translatable="false">اسيوط </string>
+    <string name="profile_username" translatable="false">مؤمن الهنداى</string>
+    <string name="profile_editprofile" translatable="false">تعديل  </string>
+
+    <!--
+    edit profile
+    -->
+    <string name="editprofile_picture" translatable="false"> تغير الصورة</string>
+    <string name="editprofile_firstname" translatable="false">الاسم الاول </string>
+    <string name="editprofile_lastname" translatable="false">الاسم التانى</string>
+    <string name="editprofile_mail" translatable="false">عنوان البريد الالكترونى  </string>
+    <string name="editprofile_changepass" translatable="false">كلمة السر </string>
+    <string name="saveiditprofile" translatable="false">حفظ  </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_supermarket__order">supermarket_Order</string>
+    textView
+</resources>
