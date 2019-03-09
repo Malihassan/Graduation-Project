@@ -4,7 +4,6 @@ public class Client_firebase {
     private String FirstName;
     private String LastName;
     private  String PhoneNumber;
-    private String password;
     private String Email;
     private String Country;
 
@@ -16,10 +15,6 @@ public class Client_firebase {
         Country = country;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public String getEmail() {
         return Email;
     }
@@ -28,9 +23,6 @@ public class Client_firebase {
         Email = email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getFirstName() {
         return FirstName;

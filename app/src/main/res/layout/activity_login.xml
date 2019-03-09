@@ -71,7 +71,7 @@
         android:layout_width="248dp"
         android:layout_height="34dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/round_edittxt_login"
         android:ems="10"
@@ -83,25 +83,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <EditText
-        android:id="@+id/login_password"
-        android:layout_width="248dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/round_edittxt_login"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/login_password"
-        android:inputType="numberPassword"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/home_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_phone_number" />
 
     <TextView
         android:id="@+id/login_create_password"

@@ -38,8 +38,7 @@ public class CreateAccount extends AppCompatActivity {
                 String ln = secondname.getText().toString();
                 phonenumber = (TextView) findViewById(R.id.createaccount_phonenumber);
                 String ph = phonenumber.getText().toString();
-                password = (TextView) findViewById(R.id.createaccount_password);
-                String pa = password.getText().toString();
+
 
                 if (TextUtils.isEmpty(firstname.getText())  )
                 {
@@ -53,17 +52,13 @@ public class CreateAccount extends AppCompatActivity {
                 {
                     phonenumber.setError("يجب ادخال رقم الهاتف !");
                 }
-                else if( TextUtils.isEmpty(password.getText()) )
-                {
-                    password.setError("يجب ادخال كلمة السر !");
-                }
+
                 else {
                     Client_firebase newaccount = new Client_firebase();
 
                     newaccount.setFirstName(fn);
                     newaccount.setLastName(ln);
                     newaccount.setPhoneNumber(ph);
-                    newaccount.setPassword(pa);
                     newaccount.setEmail("....@gmail.com");
                     newaccount.setCountry("Assuit");
                     ref.child("Client").child(ph).setValue(newaccount).addOnCompleteListener(new OnCompleteListener<Void>() {

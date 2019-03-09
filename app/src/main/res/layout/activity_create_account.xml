@@ -69,18 +69,6 @@
                 android:gravity="center"
                 android:hint="@string/createaccount_phonenumber"
                 android:inputType="number" />
-            <EditText
-                android:id="@+id/createaccount_password"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_marginStart="102dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="70dp"
-                android:background="@drawable/round_edittxt_login"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="@string/createaccount_password"
-                android:inputType="textVisiblePassword" />
 
             <Button
                 android:id="@+id/createaccount_submit"

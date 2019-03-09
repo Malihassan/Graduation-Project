@@ -62,9 +62,7 @@ public class edit_profile extends AppCompatActivity {
                         Password.setText(password);
                     }
                 }
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
