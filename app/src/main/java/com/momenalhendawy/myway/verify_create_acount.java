@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,8 +27,10 @@ public class verify_create_acount extends AppCompatActivity {
 
     //These are the objects needed
     //It is the verification id that will be sent to the user
-    private String mVerificationId;
+    public String mVerificationId;
     private static Button submit ;
+
+    private static final String TAG = "FirebasePhoneNumAuth";
 
     //The edittext to input the code
     private EditText editTextCode;
@@ -43,6 +46,8 @@ public class verify_create_acount extends AppCompatActivity {
         //initializing objects
         mAuth = FirebaseAuth.getInstance();
         editTextCode = findViewById(R.id.verifyacount_code);
+        final String mobile = getIntent().getExtras().getString("PhoneNumber");
+
         submit = (Button)findViewById(R.id.verifyaccount_submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +58,7 @@ public class verify_create_acount extends AppCompatActivity {
                     editTextCode.requestFocus();
                     return;
                 }
+                sendVerificationCode(mobile);
                 verifyVerificationCode(code);
             }
         });
@@ -63,8 +69,8 @@ public class verify_create_acount extends AppCompatActivity {
     //you can take the country id as user input as well
     private void sendVerificationCode(String mobile) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                "+91" + mobile,
-                60,
+                 mobile,
+                70,
                 TimeUnit.SECONDS,
                 TaskExecutors.MAIN_THREAD,
                 mCallbacks);
@@ -75,16 +81,19 @@ public class verify_create_acount extends AppCompatActivity {
         public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
 
             //Getting the code sent by SMS
-            String code = phoneAuthCredential.getSmsCode();
+           // String code = phoneAuthCredential.getSmsCode();
 
             //sometime the code is not detected automatically
             //in this case the code will be null
             //so user has to manually enter the code
-            if (code != null) {
+           /* if (code != null) {
                 editTextCode.setText(code);
                 //verifying the code
                 verifyVerificationCode(code);
             }
+*/
+            Log.d(TAG, "verification completed" + phoneAuthCredential);
+            signInWithPhoneAuthCredential(phoneAuthCredential);
         }
 
         @Override
@@ -98,15 +107,19 @@ public class verify_create_acount extends AppCompatActivity {
 
             //storing the verification id that is sent to the user
             mVerificationId = s;
+            Log.d(TAG, "code sent " + mVerificationId);
+
         }
     };
     private void verifyVerificationCode(String code) {
         //creating the credential
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
 
+
         //signing the user
         signInWithPhoneAuthCredential(credential);
     }
+
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(verify_create_acount.this, new OnCompleteListener<AuthResult>() {

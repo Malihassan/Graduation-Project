@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 public class CreateAccount extends AppCompatActivity {
         private static Button registaccount ;
@@ -27,6 +28,8 @@ public class CreateAccount extends AppCompatActivity {
         setContentView(R.layout.activity_create_account);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref = database.getReference();
+
+
 
         registaccount = findViewById(R.id.createaccount_submit);
         registaccount.setOnClickListener(new View.OnClickListener() {

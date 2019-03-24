@@ -44,7 +44,7 @@ public class login extends AppCompatActivity {
 
                 String ph =PhoneNumber.getText().toString().trim();
 
-                if (ph.isEmpty() || ph.length() < 11  )
+                if (ph.isEmpty() || ph.length() < 11  || ph.length() >=10 )
                 {
                     PhoneNumber.setError("يجب ادخال رقم الهاتف !");
                     PhoneNumber.requestFocus();
@@ -52,7 +52,7 @@ public class login extends AppCompatActivity {
                 }
 
                 Intent intent = new Intent(login.this, verify_create_acount.class);
-                intent.putExtra("Phone Number",ph);
+                intent.putExtra("PhoneNumber",ph);
                 startActivity(intent);
             }
         });
