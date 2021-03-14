@@ -12,11 +12,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <ImageView
             android:id="@+id/userImage"
             android:layout_width="match_parent"
-            android:layout_height="139dp"
+            android:layout_height="120dp"
             android:paddingTop="10dp"
             android:src="@drawable/user" />
 
@@ -24,202 +23,65 @@
             android:id="@+id/phoneacptain"
             android:layout_width="wrap_content"
             android:layout_height="43dp"
-            android:layout_marginStart="85dp"
-            android:layout_marginEnd="62dp"
-
-            android:paddingLeft="30sp"
+            android:layout_marginLeft="90dp"
             android:text="@string/phoneacptain"
             android:textSize="20dp"
             android:textStyle="bold" />
-
+        <TextView
+            android:id="@+id/captainrrate"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginLeft="203dp"
+            android:text="تقدير الكلى للكابتن"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <RatingBar
             android:id="@+id/ratingBar5"
             android:layout_width="wrap_content"
             android:layout_height="46dp"
-            android:layout_marginStart="86dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginLeft="50dp"
+            android:isIndicator="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            />
+        <TextView
+            android:id="@+id/userrate"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginLeft="215dp"
+            android:text="تقديرك للخدمة ؟"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+            <RatingBar
+                android:id="@+id/service_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="20dp" />
 
         <Button
             android:id="@+id/Cancel_oder"
             android:layout_width="225dp"
             android:layout_height="wrap_content"
-            android:text="@string/Cancel_oder"
-            android:layout_marginStart="86dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginBottom="5dp"
-            android:textColor="@color/cardview_light_background"
+            android:layout_marginLeft="75dp"
             android:background="@drawable/round"
-            />
-
+            android:text="@string/Cancel_oder"
+            android:textColor="@color/cardview_light_background" />
     </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/order_items"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!--
-        First one
-        -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="6">
-
-            <TextView
-                android:id="@+id/value_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:padding="10dp" />
-
-            <TextView
-                android:id="@+id/value"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="@string/value" />
-
-            <TextView
-                android:id="@+id/item_1"
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:padding="10dp" />
-
-            <TextView
-                android:id="@+id/item"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="@string/item" />
-
-        </LinearLayout>
-
-        <!--
-        Second one
-        -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="6">
-
-            <TextView
-                android:id="@+id/value_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:padding="10dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="@string/value" />
-
-            <TextView
-                android:id="@+id/item_2"
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:padding="10dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="@string/item" />
-
-        </LinearLayout>
-
-        <!--
-        Third one
-        -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="6">
-
-            <TextView
-                android:id="@+id/value_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:padding="10dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="@string/value" />
-
-            <TextView
-                android:id="@+id/item_3"
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:padding="10dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="@string/item" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="6">
-
-            <TextView
-                android:id="@+id/value_44"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:padding="10dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="@string/value" />
-
-            <TextView
-                android:id="@+id/item_4"
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:padding="10dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="@string/item" />
-
-        </LinearLayout>
-    </LinearLayout>
-
+        android:layout_height="130dp"
+        android:gravity="left"
+        android:text=""
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        />
 
 </LinearLayout>

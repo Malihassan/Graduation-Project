@@ -1,20 +1,22 @@
 package com.momenalhendawy.myway;
 
 public class requestorders {
-    private String ordername;
-    private int imageorder;
 
-    public requestorders( String order_name, int imageID)
+    private String orderDescribe;
+    private String orderImage;
+
+
+    public requestorders( String order_Describe,String order_Image)
     {
-        this.ordername = order_name;
-        this.imageorder = imageID;
+        this.orderDescribe = order_Describe;
+        this.orderImage = order_Image;
     }
 
-    public String getOrdername() {
-        return ordername;
+    public String getOrderDescribe() {
+        return orderDescribe;
     }
 
-    public int getImageorder() {
-        return imageorder;
+    public String getOrderImage() {
+        return orderImage;
     }
 }

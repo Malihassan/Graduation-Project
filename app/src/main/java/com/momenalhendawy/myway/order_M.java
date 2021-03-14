@@ -3,12 +3,12 @@ package com.momenalhendawy.myway;
 public class order_M {
     private String captainname;
     private String ordername;
-    private int id;
+    private String idpicture;
 
-    public order_M(String captain_name, String order_name, int ID) {
+    public order_M(String captain_name, String order_name, String ID) {
         this.captainname = captain_name;
         this.ordername = order_name;
-        this.id = ID;
+        this.idpicture = ID;
     }
 
     public String getCaptainname() {
@@ -20,10 +20,7 @@ public class order_M {
         return ordername;
     }
 
-
-    public int getId() {
-        return id;
+    public String getIdpicture() {
+        return idpicture;
     }
-
-
 }

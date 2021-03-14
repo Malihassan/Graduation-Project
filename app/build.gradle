@@ -4,11 +4,13 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.momenalhendawy.myway"
-        minSdkVersion 18
-        targetSdkVersion 28
+        minSdkVersion 26
+        targetSdkVersion 26
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -20,21 +22,45 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.google.firebase:firebase-messaging:12.0.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0-beta01'
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-messaging:19.0.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.google.android.gms:play-services-maps:16.0.0'
-    implementation 'org.locationtech.jts:jts-core:1.15.0'
-    implementation 'com.google.code.gson:gson:2.8.0'
-    implementation 'com.google.firebase:firebase-core:16.0.7'
-    implementation 'com.google.firebase:firebase-database:16.0.6'
-    implementation 'com.google.firebase:firebase-auth:16.1.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0-alpha01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha01'
 
+    //Google Play Services for Maps
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    implementation 'org.locationtech.jts:jts-core:1.15.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Firebase Core
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-database:18.0.0'
+
+    // Firestore Firestore
+    implementation 'com.google.firebase:firebase-firestore:20.0.0'
+
+    //Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth:18.0.0'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation "androidx.core:core:1.2.0-alpha02"
+
+    // Google play services for location information
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //Google direction
+    implementation 'com.google.maps:google-maps-services:0.9.3'
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
+
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

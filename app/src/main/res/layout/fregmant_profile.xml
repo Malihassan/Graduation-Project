@@ -7,75 +7,170 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@android:color/white">
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
-            android:layout_height="185dp"
-            android:layout_marginTop="110dp"
-            android:paddingLeft="20dp"
-            android:src="@drawable/userimages" />
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logo" />
 
-        <TextView
-            android:id="@+id/username"
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/editprofile"
-            android:layout_marginTop="40dp"
-            android:paddingLeft="20sp"
-            android:text="@string/profile_username"
-            android:textColor="@color/cardview_dark_background"
+            android:layout_height="360dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="25dp"
+            android:gravity="right"
+            android:orientation="vertical">
 
-            android:textSize="20dp" />
+            <TextView
+                android:id="@+id/editprofile_firstname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="180dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/editprofile_firstname"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/editprofile_firstname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/username"
+
+            <TextView
+                android:id="@+id/editprofile_lastname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editprofile_firstname"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40sp"
+                android:text="@string/editprofile_lastname"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/editprofile_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editprofile_lastname"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/editprofile_mail"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="360dp"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation='horizontal'>
+
+                <RadioButton
+                    android:id="@+id/Male"
+                    android:layout_width="29dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/colorPrimary"
+                    android:text="ذكر"
+                    />
+
+                <RadioButton
+                    android:id="@+id/Female"
+                    android:layout_width="7dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="20dp"
+                    android:text="انثى" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="164dp"
+            android:layout_height="360dp"
             android:layout_alignParentTop="true"
-            android:paddingLeft="20sp"
-            android:paddingTop="70dp"
-            android:text="@string/profile_firstname"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="30dp" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="220dp"
+            android:gravity="left"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/country_text_view"
-            android:layout_width="234dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/image"
-            android:layout_alignStart="@+id/ratingBar2"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="22dp"
-            android:paddingLeft="20sp"
-            android:text="@string/profile_country_text_view"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="30dp" />
+            <EditText
+                android:id="@+id/EditFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="180dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:inputType="text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark" />
 
-        <RatingBar
-            android:id="@+id/ratingBar2"
+            <EditText
+                android:id="@+id/EditSecondName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/EditSecondName"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15sp"
+                android:ems="10"
+                android:inputType="text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark" />
+
+
+            <EditText
+                android:id="@+id/EditEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editprofile_lastname"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint=""
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/country_text_view"
-            android:layout_marginStart="92dp" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="85dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="50dp">
 
-        <Button
-            android:id="@+id/editprofile"
-            android:layout_width="234dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/ratingBar2"
-            android:layout_below="@+id/ratingBar2"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/round"
-            android:text="@string/profile_editprofile"
-            android:textColor="@android:color/white" />
-
+            <Button
+                android:id="@+id/saveiditprofile"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:background="@drawable/round"
+                android:text="@string/saveiditprofile"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
 
     </RelativeLayout>
-
 </FrameLayout>

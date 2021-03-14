@@ -5,7 +5,8 @@
     android:layout_width="380dp"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".menuorder_design">
+    tools:context=".menuorder_design"
+    >
 
 
         <ImageView
@@ -20,7 +21,8 @@
         android:layout_width="242dp"
         android:layout_height="150dp"
         android:orientation="vertical"
-        android:paddingRight="31dp">
+        android:paddingRight="31dp"
+        >
 
         <TextView
             android:id="@+id/menuorder_name"
@@ -38,16 +40,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingBottom="5dp">
+            android:paddingBottom="5dp"
+            android:descendantFocusability="blocksDescendants"
+            >
 
             <Button
                 android:id="@+id/decrease"
                 android:layout_width="52dp"
                 android:layout_height="33dp"
                 android:background="@drawable/rounddecrase"
-                android:onClick="decraeseresult"
                 android:text="-"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+
+                />
 
             <TextView
                 android:id="@+id/showvalue"
@@ -63,22 +68,21 @@
                 android:layout_width="52dp"
                 android:layout_height="33dp"
                 android:background="@drawable/roundincrase"
-                android:onClick="incearseresult"
                 android:paddingRight="30dp"
                 android:text="+"
                 android:textColor="@android:color/white"
 
                 />
         </LinearLayout>
-
         <Button
             android:id="@+id/addinbox"
             android:layout_width="155dp"
             android:layout_height="33dp"
             android:layout_gravity="center"
             android:background="@drawable/round"
-            android:onClick="next"
             android:text="اضافة الى السلة "
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+
+            />
     </LinearLayout>
 </LinearLayout>

@@ -110,5 +110,13 @@ Order
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="title_activity_supermarket__order">supermarket_Order</string>
-    textView
+
+
+    <string name="collection_user_locations">User Locations</string>
+    <string name="google_maps_api_key">AIzaSyBjQBKSPvYtsGa3Vz19TEAbEpYaQ8WaGqY</string>
+    <string name="collection_users">Users</string>
+
+    <string name="default_notification_channel_id" translatable="false">Tvac_CH_01</string>
+
+
 </resources>

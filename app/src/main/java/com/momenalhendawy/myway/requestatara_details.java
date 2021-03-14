@@ -23,49 +23,40 @@ import java.util.Map;
 import static androidx.constraintlayout.widget.StateSet.TAG;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
-public class requestm4robat_details extends Fragment {
-
-    private  ListView oderlist;
+public class requestatara_details extends Fragment {
+    private static ListView oderlist;
 
     public String Do="";
     public String IDo="";
     public String Io="";
     String[] z;
-    public ArrayList<String> DrinkOrderDescribe = new ArrayList<String>();
-    public ArrayList<String> DrinkOrderID = new ArrayList<String>();
-    public ArrayList<String> DrinkOrderImage = new ArrayList<String>();
+    public ArrayList<String> SpiceOrderDescribe = new ArrayList<String>(10);
+    public ArrayList<String> SpiceOrderID = new ArrayList<String>(10);
+    public ArrayList<String> SpiceOrderImage = new ArrayList<String>(10);
 
-
-
-
-    public requestm4robat_details() {
+    public requestatara_details() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View v = inflater.inflate(R.layout.fragment_requestm4robat_details, container, false);
-
+        final View v = inflater.inflate(R.layout.fragment_requestatara_details, container, false);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db
                 .collection("Products")
-                .document("grocery")
-                .collection("Drinks ")
-                .document("cola");
+                .document("attar");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-               // Log.d(TAG, "======>>>what is here ::cola");
-
                 final ArrayList<requestorders> orders = new ArrayList<requestorders>();
                 requestorder_adapter adapter = new requestorder_adapter(getContext(), orders);
-
+                Log.d(TAG, "======>>>what is here ::cola");
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
@@ -81,38 +72,37 @@ public class requestm4robat_details extends Fragment {
                             Do = z[0];
                             IDo = z[1];
                             Io = z[2];
-                            DrinkOrderDescribe.add(Do);
-                            DrinkOrderID.add(IDo);
-                            DrinkOrderImage.add(Io);
+                            SpiceOrderDescribe.add(Do);
+                            SpiceOrderID.add(IDo);
+                            SpiceOrderImage.add(Io);
                             Log.d(TAG, "======>>>: " + Do + "--------->" + IDo + "*******>" + Io);
+
                         }
-                    }
-           //         Log.d(TAG, "======>>>what is here ::not exist");
-
-                    for (int x=0 ;x<DrinkOrderID.size();x++)
+                    }else
+                        Log.d(TAG, "======>>>what is here ::not exist");
+                    for (int x=0 ;x<SpiceOrderID.size();x++)
                     {
-                        orders.add(new requestorders(DrinkOrderDescribe.get(x), DrinkOrderImage.get(x)));
+                        orders.add(new requestorders(SpiceOrderDescribe.get(x), SpiceOrderImage.get(x)));
                     }
 
-                    User_singleton.getInstance().setDrinkOrderDescribe(DrinkOrderDescribe);
-                    User_singleton.getInstance().setDrinkOrderID(DrinkOrderID);
+                    Log.d(TAG, "======>>>: " +  SpiceOrderDescribe+ "--------->" + SpiceOrderID );
 
-                    User_singleton.getInstance().setPage("Drinks");
-                    User_singleton.getInstance().setSizeofcategorydrink(DrinkOrderID.size());
-
-
-                   Log.d(TAG, " all drink "+DrinkOrderDescribe);
+                    User_singleton.getInstance().setSpiceOrderDescribe(SpiceOrderDescribe);
+                    User_singleton.getInstance().setSpiceOrderID(SpiceOrderID);
+                    User_singleton.getInstance().setPage("Spice");
+                    User_singleton.getInstance().setSizeofcategoryspice(SpiceOrderDescribe.size());
 
 
-                    oderlist = v.findViewById(R.id.m4robat_supermarket_category);
-
+                    oderlist = v.findViewById(R.id.Atera_supermarket_category);
                     oderlist.setAdapter(adapter);
                     oderlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        public void onItemClick(AdapterView<?> list, View v, final int pos, long id) {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                         }
                     });
                 }
+
             }
         });
         return v;
@@ -120,4 +110,3 @@ public class requestm4robat_details extends Fragment {
     }
 
 }
-

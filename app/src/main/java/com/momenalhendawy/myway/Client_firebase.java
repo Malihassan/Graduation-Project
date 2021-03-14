@@ -4,8 +4,10 @@ public class Client_firebase {
     private String FirstName;
     private String LastName;
     private  String PhoneNumber;
+    private  String Name;
     private String Email;
     private String Country;
+    private String gender;
 
     public String getCountry() {
         return Country;
@@ -46,5 +48,17 @@ public class Client_firebase {
 
     public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
+    }
+
+    public String getName() { return Name; }
+
+    public void setName(String name) { Name = name; }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

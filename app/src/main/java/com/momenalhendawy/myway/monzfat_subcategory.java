@@ -26,46 +26,38 @@ import static androidx.constraintlayout.widget.StateSet.TAG;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class requestm4robat_details extends Fragment {
+public class monzfat_subcategory extends Fragment {
 
-    private  ListView oderlist;
-
+    private static ListView oderlist;
     public String Do="";
     public String IDo="";
     public String Io="";
     String[] z;
-    public ArrayList<String> DrinkOrderDescribe = new ArrayList<String>();
-    public ArrayList<String> DrinkOrderID = new ArrayList<String>();
-    public ArrayList<String> DrinkOrderImage = new ArrayList<String>();
+    public ArrayList<String> CleaningOrderDescribe = new ArrayList<String>(50);
+    public ArrayList<String> CleaningOrderID = new ArrayList<String>(50);
+    public ArrayList<String> CleaningOrderImage = new ArrayList<String>(50);
 
-
-
-
-    public requestm4robat_details() {
+    public monzfat_subcategory() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View v = inflater.inflate(R.layout.fragment_requestm4robat_details, container, false);
-
+        final View v = inflater.inflate(R.layout.fragment_monzfat_subcategory, container, false);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db
                 .collection("Products")
                 .document("grocery")
-                .collection("Drinks ")
-                .document("cola");
+                .collection("Cleaning")
+                .document("cleaning");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-               // Log.d(TAG, "======>>>what is here ::cola");
-
                 final ArrayList<requestorders> orders = new ArrayList<requestorders>();
                 requestorder_adapter adapter = new requestorder_adapter(getContext(), orders);
-
+                // Log.d(TAG, "======>>>what is here ::cola");
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
@@ -81,43 +73,40 @@ public class requestm4robat_details extends Fragment {
                             Do = z[0];
                             IDo = z[1];
                             Io = z[2];
-                            DrinkOrderDescribe.add(Do);
-                            DrinkOrderID.add(IDo);
-                            DrinkOrderImage.add(Io);
-                            Log.d(TAG, "======>>>: " + Do + "--------->" + IDo + "*******>" + Io);
+                            CleaningOrderDescribe.add(Do);
+                            CleaningOrderID.add(IDo);
+                            CleaningOrderImage.add(Io);
+                              Log.d(TAG, "======>>>: " + Do + "--------->" + IDo + "*******>" + Io);
+
                         }
                     }
-           //         Log.d(TAG, "======>>>what is here ::not exist");
 
-                    for (int x=0 ;x<DrinkOrderID.size();x++)
+                    //         Log.d(TAG, "======>>>what is here ::not exist");
+                    for (int x=0 ;x<CleaningOrderID.size();x++)
                     {
-                        orders.add(new requestorders(DrinkOrderDescribe.get(x), DrinkOrderImage.get(x)));
+                        orders.add(new requestorders(CleaningOrderDescribe.get(x),CleaningOrderImage.get(x)));
                     }
 
-                    User_singleton.getInstance().setDrinkOrderDescribe(DrinkOrderDescribe);
-                    User_singleton.getInstance().setDrinkOrderID(DrinkOrderID);
-
-                    User_singleton.getInstance().setPage("Drinks");
-                    User_singleton.getInstance().setSizeofcategorydrink(DrinkOrderID.size());
-
-
-                   Log.d(TAG, " all drink "+DrinkOrderDescribe);
+                    User_singleton.getInstance().setCleaningOrderDescribe(CleaningOrderDescribe);
+                    User_singleton.getInstance().setCleaningOrderID(CleaningOrderID);
+                    User_singleton.getInstance().setPage("Cleaning");
+                    User_singleton.getInstance().setSizeofcategoryclean(CleaningOrderID.size());
 
 
-                    oderlist = v.findViewById(R.id.m4robat_supermarket_category);
-
+                    oderlist = v.findViewById(R.id.mkaronacategoryorder);
                     oderlist.setAdapter(adapter);
                     oderlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        public void onItemClick(AdapterView<?> list, View v, final int pos, long id) {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                         }
                     });
                 }
+
             }
         });
-        return v;
 
+        return v;
     }
 
 }
-

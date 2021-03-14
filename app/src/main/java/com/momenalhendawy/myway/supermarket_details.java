@@ -3,7 +3,8 @@ package com.momenalhendawy.myway;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import static androidx.constraintlayout.widget.StateSet.TAG;
 
 
 /**
@@ -63,6 +66,13 @@ public class supermarket_details extends Fragment {
                     case 2: {
                         Intent intent = new Intent(getActivity(), supermarket_subcategory.class);
                         extras.putString("cate1", "m4robat");
+                        intent.putExtras(extras);
+                        startActivity(intent);
+                    }
+                    break;
+                    case 3: {
+                        Intent intent = new Intent(getActivity(), supermarket_subcategory.class);
+                        extras.putString("cate1", "monzfat");
                         intent.putExtras(extras);
                         startActivity(intent);
                     }

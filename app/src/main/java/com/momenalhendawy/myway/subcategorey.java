@@ -1,8 +1,8 @@
 package com.momenalhendawy.myway;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class subcategorey extends AppCompatActivity {
@@ -17,12 +17,39 @@ public class subcategorey extends AppCompatActivity {
         Fragment f = fm.findFragmentById(R.id.category_fragment);
 
 
-        String sessionId= getIntent().getStringExtra("cate1");
-        if (sessionId.equals("q1")) {
-            f = new supermarket_details();
-            fm.beginTransaction()
-                    .add(R.id.subcategory_fragment, f)
-                    .commit();
+        String sessionId = getIntent().getStringExtra("cate2");
+        switch (sessionId) {
+            case "q1": {
+                f = new supermarket_details();
+                fm.beginTransaction()
+                        .add(R.id.subcategory_fragment, f)
+                        .commit();
+            }
+            break;
+
+            case "q2": {
+                f = new requestatara_details();
+                fm.beginTransaction()
+                        .add(R.id.subcategory_fragment, f)
+                        .commit();
+            }
+            break;
+            case "q3": {
+                f = new request5dar_details();
+                fm.beginTransaction()
+                        .add(R.id.subcategory_fragment, f)
+                        .commit();
+            }
+            break;
+            /*
+            case "q4": {
+                f = new supermarket_details();
+                fm.beginTransaction()
+                        .add(R.id.subcategory_fragment, f)
+                        .commit();
+            }
+            break;
+            */
         }
     }
 }
